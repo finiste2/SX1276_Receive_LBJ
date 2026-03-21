@@ -143,6 +143,16 @@ int SD_LOG::begin(const char *path) {
     getFilename(path);
     if (!sd_log)
         return -1;
+    /* todo: storing all files in a single directory cause severe performance issue after reached 1000+ file,
+     *  could require 500+ ms to perform a single print(). Try to resolve this issue and implement a directory
+     *  rotate method, such as:
+     *  /LOG/DIR0001/LOG_0001.txt
+     *  /LOG/DIR0001/LOG_0002.txt
+     *  ...
+     *  /LOG/DIR0001/LOG_0500.txt
+     *  /LOG/DIR0002/LOG_0001.txt
+     *  ...something like that or consider use another library such as SdFat.h in the future.
+     */
     log_path = String(String(path) + '/' + filename);
     log = filesys->open(log_path, "a", true);
     if (!log) {

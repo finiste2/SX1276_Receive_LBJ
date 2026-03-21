@@ -5,7 +5,7 @@
 #ifndef PAGER_RECEIVE_LOCO_H
 #define PAGER_RECEIVE_LOCO_H
 
-static const char *locos[] = { // todo try not to use static, we are running out of memory...
+static const char *locos[] PROGMEM = {
         "",
         "解放",
         "",
@@ -269,8 +269,8 @@ static const char *locos[] = { // todo try not to use static, we are running out
         "",
         "",
         "",
-        "",
-        "",
+        "FXD1C",
+        "FXD3C",
         "",
         "",
         "",// FXD1BA?

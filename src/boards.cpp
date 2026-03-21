@@ -30,7 +30,7 @@ void initBoard() {
     voltage = battery.readVoltage() * 2;
     Serial.printf("Battery: %1.2f V\n", voltage);
     if (voltage <= 2.8) {
-        ESP.deepSleep(999999999 * 999999999U);
+        ESP.deepSleep(0);
     }
 
     SPI.begin(RADIO_SCLK_PIN, RADIO_MISO_PIN, RADIO_MOSI_PIN);
@@ -92,7 +92,7 @@ void initBoard() {
             u8g2->setFont(FONT_12_GB2312);
             u8g2->drawUTF8(24, 32, "低电压");
             u8g2->sendBuffer();
-            ESP.deepSleep(999999999 * 999999999U);
+            ESP.deepSleep(0);
         }
         do {
 //            u8g2->setFont(u8g2_font_inb19_mr);

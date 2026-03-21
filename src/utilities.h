@@ -138,6 +138,13 @@
 
 #define HAS_SDCARD
 #define HAS_DISPLAY
+
+/* Enable BLE support for https://github.com/undef-i/LBJ_Console,
+ * code from https://github.com/undef-i/SX1276_Receive_LBJ with minor modifications.
+ * Not test much currently, might have some issues, use it at your own risk.
+ * */
+#define ENABLE_BLE_SUPPORT
+
 #define FONT_12_GB2312 u8g2_font_wqy12_t_gb2312
 #define HAS_RTC // soldered an external DS3231 module.
 #define HAS_AD_BUTTON // soldered an external AD button.
